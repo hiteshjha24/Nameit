@@ -2,6 +2,7 @@ import time
 import os
 import watchdog
 from watchdog.observers import Observer
+from vision import get_image_caption
 from watchdog.events import FileSystemEventHandler
 
 SCREENSHOT_FOLDER = r"C:\Users\Lenovo\OneDrive\Pictures\Screenshots"
@@ -15,6 +16,9 @@ class ScreenshotHandler(FileSystemEventHandler):
 
         if file_name.lower().endswith((".png", ".jpg", ".jpeg")):
             print(f"New screenshot detected: {file_name}")
+
+            caption = get_image_caption(file_path)
+            print(f"AI Caption: {caption}")
 
 if __name__ == "__main__":
     print("Waiting for screenshot...")
