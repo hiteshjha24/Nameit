@@ -2,4 +2,5 @@ watchdog
 transformers
 pillow
 torch
-tesseract
+pytesseract
+opencv
