@@ -5,6 +5,7 @@ from watchdog.observers import Observer
 from vision import get_image_caption
 from watchdog.events import FileSystemEventHandler
 from ocr import extract_text
+from namer import generate_filename
 
 SCREENSHOT_FOLDER = r"C:\Users\Lenovo\OneDrive\Pictures\Screenshots"
 
@@ -23,6 +24,7 @@ class ScreenshotHandler(FileSystemEventHandler):
 
             ocr_text = extract_text(file_path)
             print(f"OCR Text: {ocr_text}")
+
 
 if __name__ == "__main__":
     print("Waiting for screenshot...")
