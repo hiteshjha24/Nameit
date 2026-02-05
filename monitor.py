@@ -25,6 +25,9 @@ class ScreenshotHandler(FileSystemEventHandler):
             ocr_text = extract_text(file_path)
             print(f"OCR Text: {ocr_text}")
 
+            name = generate_filename(caption, ocr_text)
+            print(f"AI Filename: {name}")
+
 
 if __name__ == "__main__":
     print("Waiting for screenshot...")
